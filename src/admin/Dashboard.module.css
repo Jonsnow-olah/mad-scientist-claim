@@ -1,0 +1,164 @@
+.dashboardContainer {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background: #f9f9f9;
+}
+
+.sidebar {
+  width: 220px;
+  background: #2c2c2c;
+  color: white;
+  padding: 1rem;
+  transition: width 0.3s ease, padding 0.3s ease;
+}
+
+.collapsed {
+  width: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.collapsed .topBar,
+.collapsed .projectList,
+.collapsed div {
+  display: none;
+}
+
+.topBar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.collapseBtn {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  background: #2c2c2c;
+  border: none;
+  color: white;
+  cursor: pointer;
+  z-index: 1000;
+  padding: 0.5rem;
+  border-radius: 4px;
+}
+
+.greenButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.projectList h3 {
+  margin-bottom: 0.5rem;
+  color: #ccc;
+}
+
+.projectItem {
+  margin-bottom: 0.5rem;
+}
+
+.projectButton {
+  background: none;
+  border: none;
+  text-align: left;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  width: 100%;
+  padding: 0.25rem 0;
+}
+
+.projectButton:hover {
+  text-decoration: underline;
+}
+
+.active {
+  color: #28a745;
+}
+
+.subButtons {
+  display: flex;
+  flex-direction: column;
+  padding-left: 1rem;
+  margin-top: 0.25rem;
+}
+
+.subBtn {
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 0.25rem 0;
+  color: #ccc;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.mainContent {
+  flex: 1;
+  padding: 2rem;
+  overflow-x: auto;
+}
+
+.codeTable {
+  overflow-x: auto;
+}
+
+.codeTable table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.codeTable th,
+.codeTable td {
+  padding: 0.75rem;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+.createForm {
+  background: white;
+  padding: 1.5rem;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+.deleteButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+  padding: 4px;
+}
+
+.input {
+  width: 100%;
+  padding: 0.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+@media (max-width: 768px) {
+  .mainContent {
+    padding: 1rem;
+  }
+
+  .collapseBtn {
+    top: 0.5rem;
+    left: 0.5rem;
+  }
+}

@@ -1,0 +1,52 @@
+.panelContainer {
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+
+.codesTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+
+.codesTable th,
+.codesTable td {
+  padding: 12px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+
+.codesTable th {
+  background-color: #eee;
+}
+
+
+.codesTable tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+
+.refreshButton {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
+
+.refreshButton:hover {
+  background-color: #0056b3;
+}
+
+
+.error {
+  color: red;
+  font-weight: bold;
+}

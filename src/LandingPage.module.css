@@ -1,0 +1,161 @@
+:root {
+  --brown-1: #7a4b2b;
+  --brown-2: #b88959;
+  --accent: #fff1e6;
+  --muted: rgba(255, 255, 255, 0.85);
+}
+
+
+/* full page background */
+.page {
+  height: 100vh;
+  width: 100%;
+  background: url('./assets/mm1.jpg') no-repeat center center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--accent);
+}
+
+
+
+/* top-right volume */
+.volumeBtn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+
+/* The central card */
+.card {
+  width: min(920px, 92%);
+  max-width: 920px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border-radius: 12px;
+  padding: 48px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+  text-align: center;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+
+/* Title & subtitle */
+.title {
+  font-size: 40px;
+  margin: 0 0 8px 0;
+  letter-spacing: 0.6px;
+}
+.subtitle {
+  font-size: 16px;
+  margin: 0 0 28px 0;
+  color: rgba(255,255,255,0.9);
+}
+
+
+/* center controls */
+.centerArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.connectBtn {
+  background: linear-gradient(180deg, #ffd8b4, #ffb86b);
+  color: #2b1607;
+  border: none;
+  font-weight: 700;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  margin-bottom: 12px;
+}
+
+
+.connectBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+.or {
+  margin: 8px 0;
+  color: rgba(255,255,255,0.6);
+}
+
+
+/* manual fallback */
+.manual {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+.input {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(0,0,0,0.2);
+  width: 220px;
+  background: rgba(255,255,255,0.03);
+  color: white;
+}
+.manualBtn {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(255,255,255,0.06);
+  color: white;
+  cursor: pointer;
+}
+
+
+/* errors */
+.error {
+  margin-top: 12px;
+  color: #ffd1d1;
+}
+
+
+/* result / code box */
+.result {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.resultLine {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.codeBox {
+  background: #2b1607;
+  color: #ffd8b4;
+  padding: 18px 36px;
+  font-size: 18px;
+  border-radius: 12px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  margin-bottom: 8px;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+}
+.small {
+  font-size: 12px;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 20px;
+}
+.noCode {
+  margin-top: 14px;
+  font-size: 16px;
+  color: rgba(255,255,255,0.92);
+}
