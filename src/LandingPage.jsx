@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import styles from './LandingPage.module.css';
+import madLogo from './assets/mad-logo.png';
 
 const BACKEND_ORIGIN = import.meta.env.VITE_BACKEND_ORIGIN || 'http://localhost:3001';
 
@@ -113,6 +114,7 @@ export default function LandingPage() {
 
   return (
     <div className={styles.page}>
+      <img src={madLogo} alt="Mad Scientists Logo" className={styles.logo} />
       <div className={styles.card}>
         <h1 className={styles.title}>Mad Scientists Code Claim</h1>
         <p className={styles.subtitle}>Connect your Discord account to get your codes</p>
