@@ -1,15 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { toast } from 'react-toastify';
 import styles from './LandingPage.module.css';
-import { FaVolumeUp, FaVolumeMute } from 'react-icons/fa';
 
 const BACKEND_ORIGIN = import.meta.env.VITE_BACKEND_ORIGIN || 'http://localhost:3001';
-const MUSIC_PATH = '/assets/mm1.mp3';
 
 export default function LandingPage() {
-  const audioRef = useRef(null);
   const popupRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(false);
   const [connecting, setConnecting] = useState(false);
   const [isConnected, setIsConnected] = useState(() => {
     return localStorage.getItem('isConnected') === 'true';
@@ -22,14 +18,6 @@ export default function LandingPage() {
   const [accessToken, setAccessToken] = useState(() => {
     return localStorage.getItem('accessToken') || null;
   });
-
-  useEffect(() => {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.play().catch(() => {
-      console.warn('Autoplay was prevented by browser');
-    });
-  }, []);
 
   useEffect(() => {
     localStorage.setItem('isConnected', isConnected);
@@ -64,13 +52,6 @@ export default function LandingPage() {
     window.addEventListener('message', onMessage);
     return () => window.removeEventListener('message', onMessage);
   }, []);
-
-  function toggleMute() {
-    const audio = audioRef.current;
-    if (!audio) return;
-    audio.muted = !audio.muted;
-    setIsMuted(audio.muted);
-  }
 
   function openDiscordPopup() {
     setConnecting(true);
@@ -132,12 +113,8 @@ export default function LandingPage() {
 
   return (
     <div className={styles.page}>
-      <audio ref={audioRef} src={MUSIC_PATH} loop />
-      <button className={styles.volumeBtn} onClick={toggleMute} aria-label="Toggle sound">
-        {isMuted ? <FaVolumeMute size={18} /> : <FaVolumeUp size={18} />}
-      </button>
       <div className={styles.card}>
-        <h1 className={styles.title}>Mamo Claim</h1>
+        <h1 className={styles.title}>Mad Scientists Code Claim</h1>
         <p className={styles.subtitle}>Connect your Discord account to get your codes</p>
         <div className={styles.centerArea}>
           <button

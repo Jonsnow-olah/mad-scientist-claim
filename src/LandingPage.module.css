@@ -1,66 +1,51 @@
 :root {
-  --brown-1: #7a4b2b;
-  --brown-2: #b88959;
-  --accent: #fff1e6;
-  --muted: rgba(255, 255, 255, 0.85);
+  --green-1: #00ff00;
+  --green-2: #00cc00;
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.7);
+  --accent: #00ff00;
+  --dark-bg: #111111;
 }
-
 
 /* full page background */
 .page {
   height: 100vh;
   width: 100%;
-  background: url('./assets/mm1.jpg') no-repeat center center;
+  background: var(--bg) url('./assets/blink.gif') no-repeat center center;
   background-size: cover;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
   font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  color: var(--accent);
+  color: var(--text);
 }
-
-
-
-/* top-right volume */
-.volumeBtn {
-  position: absolute;
-  top: 18px;
-  right: 18px;
-  background: rgba(255,255,255,0.06);
-  color: white;
-  border: none;
-  padding: 8px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
 
 /* The central card */
 .card {
   width: min(920px, 92%);
   max-width: 920px;
-  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  background: var(--dark-bg);
   border-radius: 12px;
   padding: 48px;
-  box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+  box-shadow: 0 8px 40px rgba(0, 255, 0, 0.1);
   text-align: center;
-  border: 1px solid rgba(255,255,255,0.04);
+  border: 1px solid rgba(0, 255, 0, 0.2);
 }
-
 
 /* Title & subtitle */
 .title {
   font-size: 40px;
   margin: 0 0 8px 0;
   letter-spacing: 0.6px;
+  color: var(--accent);
 }
 .subtitle {
   font-size: 16px;
   margin: 0 0 28px 0;
-  color: rgba(255,255,255,0.9);
+  color: var(--muted);
 }
-
 
 /* center controls */
 .centerArea {
@@ -69,63 +54,29 @@
   align-items: center;
 }
 
-
 .connectBtn {
-  background: linear-gradient(180deg, #ffd8b4, #ffb86b);
-  color: #2b1607;
+  background: linear-gradient(180deg, var(--green-1), var(--green-2));
+  color: var(--bg);
   border: none;
   font-weight: 700;
   padding: 14px 28px;
   border-radius: 12px;
   font-size: 18px;
   cursor: pointer;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  box-shadow: 0 6px 20px rgba(0, 255, 0, 0.3);
   margin-bottom: 12px;
 }
-
 
 .connectBtn:disabled {
   opacity: 0.6;
   cursor: not-allowed;
 }
 
-
-.or {
-  margin: 8px 0;
-  color: rgba(255,255,255,0.6);
-}
-
-
-/* manual fallback */
-.manual {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-.input {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: 1px solid rgba(0,0,0,0.2);
-  width: 220px;
-  background: rgba(255,255,255,0.03);
-  color: white;
-}
-.manualBtn {
-  padding: 8px 12px;
-  border-radius: 8px;
-  border: none;
-  background: rgba(255,255,255,0.06);
-  color: white;
-  cursor: pointer;
-}
-
-
 /* errors */
 .error {
   margin-top: 12px;
-  color: #ffd1d1;
+  color: #ff0000;
 }
-
 
 /* result / code box */
 .result {
@@ -137,25 +88,85 @@
 .resultLine {
   font-size: 18px;
   margin-bottom: 15px;
+  color: var(--text);
 }
 .codeBox {
-  background: #2b1607;
-  color: #ffd8b4;
+  background: var(--bg);
+  color: var(--accent);
   padding: 18px 36px;
   font-size: 18px;
   border-radius: 12px;
   font-weight: 800;
   letter-spacing: 1.6px;
   margin-bottom: 8px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+  box-shadow: 0 8px 30px rgba(0, 255, 0, 0.2);
+  border: 1px solid var(--accent);
 }
 .small {
   font-size: 12px;
-  color: rgba(255,255,255,0.7);
+  color: var(--muted);
   margin-bottom: 20px;
 }
 .noCode {
   margin-top: 14px;
   font-size: 16px;
-  color: rgba(255,255,255,0.92);
+  color: var(--text);
+}
+.resultBlock {
+  margin-bottom: 20px;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .card {
+    padding: 32px;
+  }
+  .title {
+    font-size: 32px;
+  }
+  .subtitle {
+    font-size: 14px;
+  }
+  .connectBtn {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+  .resultLine {
+    font-size: 16px;
+  }
+  .codeBox {
+    padding: 14px 28px;
+    font-size: 16px;
+  }
+  .small {
+    font-size: 11px;
+  }
+  .noCode {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .card {
+    padding: 24px;
+    width: 95%;
+  }
+  .title {
+    font-size: 28px;
+  }
+  .connectBtn {
+    width: 100%;
+    padding: 12px;
+  }
+  .codeBox {
+    padding: 12px 24px;
+    font-size: 14px;
+    letter-spacing: 1.2px;
+  }
+  .result {
+    width: 100%;
+  }
+  .resultBlock {
+    width: 100%;
+  }
 }
